@@ -8,6 +8,8 @@ import { FAQAccordion } from "@/components/site/FAQAccordion";
 import { Button } from "@/components/ui/button";
 import { FIRM, mailto, waLink } from "@/lib/firm";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import aboutScales from "@/assets/about-scales.jpg";
+import ctaCourthouse from "@/assets/cta-courthouse.jpg";
 
 const FAQS = [
   {
