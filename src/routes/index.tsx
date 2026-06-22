@@ -76,17 +76,18 @@ function Home() {
       <Hero />
 
       {/* Trust bar */}
-      <section aria-label="Trust" className="border-y border-border bg-background">
-        <div className="container-prose grid grid-cols-2 gap-y-6 py-8 sm:grid-cols-4">
+      <section aria-label="Trust" className="relative border-y border-border bg-gradient-ivory">
+        <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+        <div className="container-prose grid grid-cols-2 gap-y-8 py-10 sm:grid-cols-4">
           {[
             { k: "Harare", v: "Belvedere chambers" },
             { k: "Multi-practice", v: "10 areas of law" },
             { k: "Direct access", v: "WhatsApp, email & phone" },
             { k: "Confidential", v: "Discreet consultations" },
-          ].map((t) => (
-            <div key={t.k} className="px-2 text-center">
+          ].map((t, i) => (
+            <div key={t.k} className={`px-2 text-center ${i > 0 ? "sm:border-l sm:border-gold/20" : ""}`}>
               <div className="font-serif text-lg text-navy-deep sm:text-xl">{t.k}</div>
-              <div className="mt-1 text-xs uppercase tracking-[0.15em] text-muted-foreground">
+              <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
                 {t.v}
               </div>
             </div>
@@ -101,20 +102,21 @@ function Home() {
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-gold/25 to-navy/10 blur-2xl"
+                className="absolute -inset-4 rounded-3xl bg-gradient-gold opacity-25 blur-3xl"
               />
-              <div className="relative overflow-hidden rounded-2xl shadow-elegant ring-1 ring-navy/10">
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant ring-1 ring-gold/30">
                 <img
                   src={aboutScales}
                   alt="Brass scales of justice resting on antique leather-bound law books"
                   width={1280}
                   height={1024}
                   loading="lazy"
-                  className="h-[360px] w-full object-cover sm:h-[460px]"
+                  className="h-[320px] w-full object-cover sm:h-[460px]"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden rounded-xl border border-gold/40 bg-ivory px-5 py-4 text-navy-deep shadow-soft sm:block">
-                <div className="text-[10px] uppercase tracking-[0.22em] text-gold">Est. Harare</div>
+              <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-gold/40 bg-gradient-ivory px-5 py-4 text-navy-deep shadow-elegant sm:-bottom-6 sm:right-auto sm:left-auto sm:-right-6">
+                <div className="text-[10px] uppercase tracking-[0.22em] text-gold-deep">Est. Harare</div>
                 <div className="font-serif text-lg">Belvedere Chambers</div>
               </div>
             </div>
@@ -150,7 +152,7 @@ function Home() {
       </section>
 
       {/* Image band — courthouse */}
-      <section className="relative h-[280px] overflow-hidden md:h-[360px]">
+      <section className="relative h-[260px] overflow-hidden sm:h-[320px] md:h-[400px]">
         <img
           src={ctaCourthouse}
           alt="Neoclassical courthouse colonnade at golden hour"
@@ -159,14 +161,16 @@ function Home() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/85 via-navy-deep/55 to-navy-deep/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-midnight via-navy-deep/70 to-navy/20" />
+        <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+        <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
         <div className="container-prose relative flex h-full items-center">
           <div className="max-w-xl text-ivory">
-            <div className="text-xs uppercase tracking-[0.22em] text-gold">
+            <div className="text-[10px] uppercase tracking-[0.22em] text-gold sm:text-xs">
               Committed to the rule of law
             </div>
-            <h2 className="mt-3 font-serif text-2xl leading-tight sm:text-3xl">
-              Practical counsel. Principled advocacy. Real outcomes for our clients.
+            <h2 className="mt-3 font-serif text-2xl leading-tight text-ivory sm:text-3xl md:text-4xl">
+              Practical counsel. Principled advocacy. <span className="gold-text">Real outcomes</span> for our clients.
             </h2>
           </div>
         </div>

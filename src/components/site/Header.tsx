@@ -15,10 +15,11 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 shadow-[0_1px_0_0_color-mix(in_oklab,var(--gold)_15%,transparent)] backdrop-blur-md">
+      <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
       <div className="container-prose grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 sm:py-4">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-navy text-ivory shadow-soft">
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-gradient-navy text-gold shadow-soft ring-1 ring-gold/30">
             <span className="font-serif text-lg tracking-wider">M&amp;A</span>
           </div>
           <div className="min-w-0 leading-tight">

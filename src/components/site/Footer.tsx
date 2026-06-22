@@ -5,7 +5,8 @@ import { PRACTICE_AREAS } from "@/lib/practice-areas";
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-navy-deep text-ivory">
+    <footer className="relative mt-24 bg-gradient-navy text-ivory">
+      <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/80 to-transparent" />
       <div className="container-prose grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
           <div className="font-serif text-2xl">{FIRM.short}</div>
