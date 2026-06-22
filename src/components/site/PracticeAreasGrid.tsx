@@ -55,23 +55,27 @@ export function PracticeAreasGrid({ heading = true }: { heading?: boolean }) {
             return (
               <article
                 key={p.slug}
-                className="group relative flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-elegant"
+                className="premium-card group relative flex flex-col overflow-hidden p-6 sm:p-7"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-lg bg-ivory text-navy-deep ring-1 ring-gold/30 transition-colors group-hover:bg-gold group-hover:text-navy-deep">
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <div className="relative grid h-12 w-12 place-items-center rounded-xl bg-gradient-navy text-gold ring-1 ring-gold/40 shadow-soft transition-transform group-hover:scale-105">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 font-serif text-xl text-navy-deep">{p.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal/75">{p.short}</p>
-                <div className="mt-6 flex items-center gap-2 pt-1">
+                <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
                   <Link
                     to="/practice-areas/$slug"
                     params={{ slug: p.slug }}
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-navy-deep hover:text-navy"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-navy-deep transition-colors hover:text-gold-deep"
                   >
                     Learn more
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
-                  <span className="mx-2 h-3 w-px bg-border" />
+                  <span className="h-3 w-px bg-border" />
                   <a
                     href={waLink(
                       undefined,
@@ -79,7 +83,7 @@ export function PracticeAreasGrid({ heading = true }: { heading?: boolean }) {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-charcoal/80 hover:text-whatsapp"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-charcoal/75 hover:text-whatsapp"
                   >
                     <MessageCircle className="h-3.5 w-3.5" />
                     Request assistance
