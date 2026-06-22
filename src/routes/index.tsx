@@ -152,7 +152,7 @@ function Home() {
       </section>
 
       {/* Image band — courthouse */}
-      <section className="relative h-[280px] overflow-hidden md:h-[360px]">
+      <section className="relative h-[260px] overflow-hidden sm:h-[320px] md:h-[400px]">
         <img
           src={ctaCourthouse}
           alt="Neoclassical courthouse colonnade at golden hour"
@@ -161,14 +161,16 @@ function Home() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/85 via-navy-deep/55 to-navy-deep/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-midnight via-navy-deep/70 to-navy/20" />
+        <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+        <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
         <div className="container-prose relative flex h-full items-center">
           <div className="max-w-xl text-ivory">
-            <div className="text-xs uppercase tracking-[0.22em] text-gold">
+            <div className="text-[10px] uppercase tracking-[0.22em] text-gold sm:text-xs">
               Committed to the rule of law
             </div>
-            <h2 className="mt-3 font-serif text-2xl leading-tight sm:text-3xl">
-              Practical counsel. Principled advocacy. Real outcomes for our clients.
+            <h2 className="mt-3 font-serif text-2xl leading-tight text-ivory sm:text-3xl md:text-4xl">
+              Practical counsel. Principled advocacy. <span className="gold-text">Real outcomes</span> for our clients.
             </h2>
           </div>
         </div>
