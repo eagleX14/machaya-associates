@@ -30,27 +30,32 @@ const POINTS = [
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-ivory py-20 md:py-24">
-      <div className="container-prose">
+    <section className="relative overflow-hidden bg-gradient-navy py-20 text-ivory md:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold) 30%, transparent), transparent 65%)" }}
+      />
+      <div className="container-prose relative">
         <div className="mx-auto max-w-2xl text-center">
           <div className="text-xs uppercase tracking-[0.22em] text-gold">Why clients choose us</div>
-          <h2 className="mt-4 font-serif text-3xl text-navy-deep sm:text-4xl">
-            A firm built on trust and results
+          <h2 className="mt-4 font-serif text-3xl text-ivory sm:text-4xl">
+            A firm built on <span className="gold-text">trust</span> and results
           </h2>
           <span className="gold-divider mx-auto mt-6" />
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {POINTS.map((p) => (
             <div
               key={p.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft"
+              className="group relative flex flex-col rounded-2xl border border-ivory/10 bg-ivory/[0.04] p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-gold/40 hover:bg-ivory/[0.07]"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-lg bg-navy-deep text-gold">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-gold text-navy-deep shadow-gold ring-1 ring-gold-deep/30">
                 <p.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 font-serif text-lg text-navy-deep">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-charcoal/75">{p.body}</p>
+              <h3 className="mt-5 font-serif text-lg text-ivory">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ivory/70">{p.body}</p>
             </div>
           ))}
         </div>
