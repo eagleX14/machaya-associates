@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, ArrowRight, MapPin } from "lucide-react";
 import { FIRM, mailto, waLink } from "@/lib/firm";
+import heroChambers from "@/assets/hero-chambers.jpg";
 
 export function Hero() {
   return (
@@ -61,35 +62,45 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="relative rounded-2xl bg-navy-deep p-8 text-ivory shadow-elegant">
-            <div className="absolute inset-x-0 -top-px mx-8 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
-            <div className="text-xs uppercase tracking-[0.22em] text-gold">Visit our chambers</div>
-            <div className="mt-4 font-serif text-2xl leading-snug">
-              No. 7 Eastcourt Road
-              <br />
-              Belvedere, Harare
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-gold/30 to-navy/20 blur-2xl"
+            />
+            <div className="relative overflow-hidden rounded-2xl shadow-elegant ring-1 ring-navy/10">
+              <img
+                src={heroChambers}
+                alt="Elegant law firm chambers with mahogany desk, brass scales of justice, and antique law books"
+                width={1024}
+                height={1536}
+                className="h-[460px] w-full object-cover sm:h-[560px] lg:h-[640px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-ivory sm:p-8">
+                <div className="mx-auto h-px w-12 bg-gold" />
+                <div className="mt-4 text-[10px] uppercase tracking-[0.22em] text-gold">
+                  Visit our chambers
+                </div>
+                <div className="mt-2 font-serif text-xl leading-snug sm:text-2xl">
+                  No. 7 Eastcourt Road, Belvedere, Harare
+                </div>
+                <div className="mt-3 flex items-center gap-2 text-xs text-ivory/80">
+                  <MapPin className="h-3.5 w-3.5 text-gold" />
+                  Zimbabwe
+                </div>
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex"
+                >
+                  <Button variant="gold" size="default">
+                    <MessageCircle className="h-4 w-4" />
+                    Start on WhatsApp
+                  </Button>
+                </a>
+              </div>
             </div>
-            <div className="mt-6 flex items-center gap-3 text-sm text-ivory/80">
-              <MapPin className="h-4 w-4 text-gold" />
-              Zimbabwe
-            </div>
-            <div className="my-8 h-px w-full bg-ivory/10" />
-            <div className="text-xs uppercase tracking-[0.22em] text-gold">Confidential consultation</div>
-            <p className="mt-3 text-sm leading-relaxed text-ivory/75">
-              Speak directly to a legal practitioner. Initial enquiries are handled with
-              discretion and care.
-            </p>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex"
-            >
-              <Button variant="gold" size="lg">
-                <MessageCircle className="h-4 w-4" />
-                Start on WhatsApp
-              </Button>
-            </a>
           </div>
         </div>
       </div>

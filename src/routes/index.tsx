@@ -8,6 +8,8 @@ import { FAQAccordion } from "@/components/site/FAQAccordion";
 import { Button } from "@/components/ui/button";
 import { FIRM, mailto, waLink } from "@/lib/firm";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import aboutScales from "@/assets/about-scales.jpg";
+import ctaCourthouse from "@/assets/cta-courthouse.jpg";
 
 const FAQS = [
   {
@@ -94,16 +96,36 @@ function Home() {
 
       {/* About preview */}
       <section className="bg-background py-20 md:py-24">
-        <div className="container-prose grid gap-12 lg:grid-cols-12">
+        <div className="container-prose grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-gold/25 to-navy/10 blur-2xl"
+              />
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant ring-1 ring-navy/10">
+                <img
+                  src={aboutScales}
+                  alt="Brass scales of justice resting on antique leather-bound law books"
+                  width={1280}
+                  height={1024}
+                  loading="lazy"
+                  className="h-[360px] w-full object-cover sm:h-[460px]"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 hidden rounded-xl border border-gold/40 bg-ivory px-5 py-4 text-navy-deep shadow-soft sm:block">
+                <div className="text-[10px] uppercase tracking-[0.22em] text-gold">Est. Harare</div>
+                <div className="font-serif text-lg">Belvedere Chambers</div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
             <div className="text-xs uppercase tracking-[0.22em] text-gold">About the firm</div>
             <h2 className="mt-4 font-serif text-3xl text-navy-deep sm:text-4xl">
               A Harare-based law firm built on integrity and service
             </h2>
             <span className="gold-divider mt-6" />
-          </div>
-          <div className="lg:col-span-7">
-            <p className="text-base leading-relaxed text-charcoal/80">
+            <p className="mt-6 text-base leading-relaxed text-charcoal/80">
               Machaya &amp; Associates Legal Practitioners is a growing law firm based in
               Harare, Zimbabwe, dedicated to providing comprehensive legal and advisory
               services to a diverse clientele. Founded by Dambudzo Machaya — with
@@ -123,6 +145,29 @@ function Home() {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image band — courthouse */}
+      <section className="relative h-[280px] overflow-hidden md:h-[360px]">
+        <img
+          src={ctaCourthouse}
+          alt="Neoclassical courthouse colonnade at golden hour"
+          width={1600}
+          height={900}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/85 via-navy-deep/55 to-navy-deep/30" />
+        <div className="container-prose relative flex h-full items-center">
+          <div className="max-w-xl text-ivory">
+            <div className="text-xs uppercase tracking-[0.22em] text-gold">
+              Committed to the rule of law
+            </div>
+            <h2 className="mt-3 font-serif text-2xl leading-tight sm:text-3xl">
+              Practical counsel. Principled advocacy. Real outcomes for our clients.
+            </h2>
           </div>
         </div>
       </section>
