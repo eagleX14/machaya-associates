@@ -60,7 +60,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Try again
           </button>
           <a
-            href="/"
+            href={import.meta.env.BASE_URL}
             className="rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium text-navy-deep hover:bg-muted"
           >
             Go home

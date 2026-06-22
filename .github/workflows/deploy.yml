@@ -27,47 +27,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-
-      - name: Print project diagnostics
-        run: |
-          echo "Current folder:"
-          pwd
-
-          echo "Root files:"
-          ls -la
-
-          echo "Source files:"
-          find src -maxdepth 4 -type f | sort || true
-
-          echo "Package scripts:"
-          node -e "const p=require('./package.json'); console.log(p.scripts)"
-
-          echo "Vite config:"
-          cat vite.config.ts || cat vite.config.js || true
-
-      - name: Ensure Vite index.html exists
-        run: |
-          if [ -f index.html ]; then
-            echo "index.html already exists."
-          else
-            echo "Creating index.html"
-            cat > index.html <<'EOF'
-          <!doctype html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>Machaya & Associates Legal Practitioners</title>
-              <meta name="description" content="Machaya & Associates Legal Practitioners is a Harare-based law firm offering legal services in Zimbabwe." />
-              <script type="module" src="/src/main.tsx"></script>
-            </head>
-            <body>
-              <div id="root"></div>
-            </body>
-          </html>
-          EOF
-          fi
+          node-version: 24
+          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -75,7 +36,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Add SPA fallback for GitHub Pages
+      - name: Add GitHub Pages SPA fallback
         run: |
           cp dist/index.html dist/404.html
           touch dist/.nojekyll
