@@ -128,15 +128,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: FIRM.name },
       { property: "og:site_name", content: FIRM.short },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: `${FIRM.name} | Law Firm in Harare, Zimbabwe` },
+      {
+        property: "og:description",
+        content:
+          "Harare-based law firm offering litigation, estates, corporate, conveyancing, family, employment, IP, tax and dispute resolution services.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Lovable App" },
-      { property: "og:title", content: "Lovable App" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "description", content: "A professional, SEO-optimized website for Machaya & Associates Legal Practitioners, offering comprehensive legal services in Zimbabwe." },
-      { property: "og:description", content: "A professional, SEO-optimized website for Machaya & Associates Legal Practitioners, offering comprehensive legal services in Zimbabwe." },
-      { name: "twitter:description", content: "A professional, SEO-optimized website for Machaya & Associates Legal Practitioners, offering comprehensive legal services in Zimbabwe." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/135fcaed-32e0-4f8e-90af-d8a45d9ec76f/id-preview-0da0e5f1--3a90071a-7982-49de-9f7a-6dc1600515ef.lovable.app-1782167243465.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/135fcaed-32e0-4f8e-90af-d8a45d9ec76f/id-preview-0da0e5f1--3a90071a-7982-49de-9f7a-6dc1600515ef.lovable.app-1782167243465.png" },
+      { name: "twitter:title", content: `${FIRM.name} | Law Firm in Harare, Zimbabwe` },
+      {
+        name: "twitter:description",
+        content:
+          "Harare-based law firm offering litigation, estates, corporate, conveyancing, family, employment, IP, tax and dispute resolution services.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
