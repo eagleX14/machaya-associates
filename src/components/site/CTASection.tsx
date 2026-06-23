@@ -48,28 +48,28 @@ export function CTASection({
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap md:justify-end">
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-            <Button variant="gold" size="lg" className="w-full sm:w-auto">
+          <Button asChild variant="gold" size="lg" className="w-full sm:w-auto">
+  <a href={waLink()} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <MessageCircle className="h-4 w-4" />
               WhatsApp
-            </Button>
-          </a>
-          <a href={mailto()} className="w-full sm:w-auto">
-            <Button
+            </a>
+</Button>
+          <Button asChild
               variant={isNavy ? "outlineGold" : "navy"}
               size="lg"
               className={`w-full sm:w-auto ${isNavy ? "border-gold/60 text-ivory hover:text-navy-deep" : ""}`}
             >
+  <a href={mailto()} className="w-full sm:w-auto">
               <Mail className="h-4 w-4" />
               Email
-            </Button>
-          </a>
-          <Link to="/contact" className="w-full sm:w-auto">
-            <Button variant="ghost" size="lg" className={`w-full sm:w-auto ${isNavy ? "text-ivory hover:bg-ivory/10 hover:text-ivory" : "text-navy-deep"}`}>
+            </a>
+</Button>
+          <Button asChild variant="ghost" size="lg" className={`w-full sm:w-auto ${isNavy ? "text-ivory hover:bg-ivory/10 hover:text-ivory" : "text-navy-deep"}`}>
+  <Link to="/contact" className="w-full sm:w-auto">
               Contact page
               <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+            </Link>
+</Button>
         </div>
       </div>
     </section>

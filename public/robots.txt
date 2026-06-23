@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://eaglex14.github.io/legal-compass-harare/sitemap.xml

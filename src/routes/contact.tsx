@@ -146,16 +146,16 @@ function ContactPage() {
                   us directly so we can attend to you without delay.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  <a href={`tel:${FIRM.phone.tel}`}>
-                    <Button variant="navy" size="sm">
+                  <Button asChild variant="navy" size="sm">
+  <a href={`tel:${FIRM.phone.tel}`}>
                       Call now
-                    </Button>
-                  </a>
-                  <a href={waLink()} target="_blank" rel="noopener noreferrer">
-                    <Button variant="whatsapp" size="sm">
+                    </a>
+</Button>
+                  <Button asChild variant="whatsapp" size="sm">
+  <a href={waLink()} target="_blank" rel="noopener noreferrer">
                       WhatsApp now
-                    </Button>
-                  </a>
+                    </a>
+</Button>
                 </div>
               </div>
             </div>

@@ -44,24 +44,24 @@ export function Hero() {
             resolution services.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <Button variant="gold" size="xl" className="w-full sm:w-auto">
+            <Button asChild variant="gold" size="xl" className="w-full sm:w-auto">
+  <a href={waLink()} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <MessageCircle className="h-5 w-5" />
                 WhatsApp Us
-              </Button>
-            </a>
-            <a href={mailto()} className="w-full sm:w-auto">
-              <Button variant="outlineGold" size="xl" className="w-full border-gold/50 text-ivory hover:text-navy-deep sm:w-auto">
+              </a>
+</Button>
+            <Button asChild variant="outlineGold" size="xl" className="w-full border-gold/50 text-ivory hover:text-navy-deep sm:w-auto">
+  <a href={mailto()} className="w-full sm:w-auto">
                 <Mail className="h-5 w-5" />
                 Email Our Legal Team
-              </Button>
-            </a>
-            <Link to="/practice-areas" className="w-full sm:w-auto">
-              <Button variant="ghost" size="xl" className="w-full text-ivory/90 hover:bg-ivory/10 hover:text-ivory sm:w-auto">
+              </a>
+</Button>
+            <Button asChild variant="ghost" size="xl" className="w-full text-ivory/90 hover:bg-ivory/10 hover:text-ivory sm:w-auto">
+  <Link to="/practice-areas" className="w-full sm:w-auto">
                 Practice Areas
                 <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+              </Link>
+</Button>
           </div>
 
           <ul className="mt-10 grid max-w-xl grid-cols-1 gap-3 text-sm sm:grid-cols-3">
@@ -101,17 +101,17 @@ export function Hero() {
                   <MapPin className="h-3.5 w-3.5 text-gold" />
                   Zimbabwe
                 </div>
-                <a
+                <Button asChild variant="gold" size="default">
+  <a
                   href={waLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex"
                 >
-                  <Button variant="gold" size="default">
                     <MessageCircle className="h-4 w-4" />
                     Start on WhatsApp
-                  </Button>
-                </a>
+                  </a>
+</Button>
               </div>
             </div>
           </div>

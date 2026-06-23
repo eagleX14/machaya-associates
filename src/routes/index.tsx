@@ -140,12 +140,12 @@ function Home() {
               strong insight into both public and private legal practice.
             </p>
             <div className="mt-6">
-              <Link to="/about">
-                <Button variant="outlineGold" size="lg">
+              <Button asChild variant="outlineGold" size="lg">
+  <Link to="/about">
                   Read more about us
                   <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
+                </Link>
+</Button>
             </div>
           </div>
         </div>
@@ -226,12 +226,12 @@ function Home() {
               </li>
             </ul>
             <div className="mt-8">
-              <Link to="/contact">
-                <Button variant="navy" size="lg">
+              <Button asChild variant="navy" size="lg">
+  <Link to="/contact">
                   Full contact details
                   <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
+                </Link>
+</Button>
             </div>
           </div>
 

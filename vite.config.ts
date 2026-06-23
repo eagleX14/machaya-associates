@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import path from "path";
 
 export default defineConfig({
@@ -10,10 +9,14 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    sourcemap: false,
+    chunkSizeWarningLimit: 1200,
   },
 });

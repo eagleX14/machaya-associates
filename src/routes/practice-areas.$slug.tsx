@@ -95,24 +95,24 @@ function PracticeAreaPage() {
             {area.short}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={waLink(undefined, waMsg)} target="_blank" rel="noopener noreferrer">
-              <Button variant="gold" size="lg">
+            <Button asChild variant="gold" size="lg">
+  <a href={waLink(undefined, waMsg)} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4" />
                 Request assistance on WhatsApp
-              </Button>
-            </a>
-            <a
+              </a>
+</Button>
+            <Button asChild variant="navy" size="lg">
+  <a
               href={mailto(
                 FIRM.emails.primary,
                 `Enquiry: ${area.title}`,
                 `Hello ${FIRM.short},\n\nI would like to request assistance regarding ${area.title}.\n\n`
               )}
             >
-              <Button variant="navy" size="lg">
                 <Mail className="h-4 w-4" />
                 Email our team
-              </Button>
-            </a>
+              </a>
+</Button>
           </div>
         </div>
       </section>
@@ -148,23 +148,23 @@ function PracticeAreaPage() {
                 channel and we will respond promptly.
               </p>
               <div className="mt-6 flex flex-col gap-3">
-                <a href={waLink(undefined, waMsg)} target="_blank" rel="noopener noreferrer">
-                  <Button variant="whatsapp" size="lg" className="w-full justify-center">
+                <Button asChild variant="whatsapp" size="lg" className="w-full justify-center">
+  <a href={waLink(undefined, waMsg)} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp
-                  </Button>
-                </a>
-                <a href={mailto(FIRM.emails.primary, `Enquiry: ${area.title}`)}>
-                  <Button variant="navy" size="lg" className="w-full justify-center">
+                  </a>
+</Button>
+                <Button asChild variant="navy" size="lg" className="w-full justify-center">
+  <a href={mailto(FIRM.emails.primary, `Enquiry: ${area.title}`)}>
                     <Mail className="h-4 w-4" />
                     Email
-                  </Button>
-                </a>
-                <a href={`tel:${FIRM.phone.tel}`}>
-                  <Button variant="outlineGold" size="lg" className="w-full justify-center">
+                  </a>
+</Button>
+                <Button asChild variant="outlineGold" size="lg" className="w-full justify-center">
+  <a href={`tel:${FIRM.phone.tel}`}>
                     Call {FIRM.phone.display}
-                  </Button>
-                </a>
+                  </a>
+</Button>
               </div>
             </div>
           </aside>

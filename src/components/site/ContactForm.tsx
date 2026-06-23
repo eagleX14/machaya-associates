@@ -92,7 +92,11 @@ export function ContactForm() {
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    window.open(waLink(undefined, buildMessage(data)), "_blank", "noopener");
+    const url = waLink(undefined, buildMessage(data));
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
+    if (!opened) {
+      window.location.href = url;
+    }
   };
 
   const handleEmail = (e: React.FormEvent) => {
@@ -106,7 +110,7 @@ export function ContactForm() {
   };
 
   return (
-    <form className="space-y-5 rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8">
+    <form onSubmit={handleWhatsApp} className="space-y-5 rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" error={errors.name} htmlFor="name">
           <Input
@@ -206,7 +210,7 @@ export function ContactForm() {
       </p>
 
       <div className="flex flex-wrap gap-3 pt-1">
-        <Button type="submit" variant="whatsapp" size="lg" onClick={handleWhatsApp}>
+        <Button type="submit" variant="whatsapp" size="lg">
           <MessageCircle className="h-4 w-4" />
           Send via WhatsApp
         </Button>

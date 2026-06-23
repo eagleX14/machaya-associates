@@ -45,18 +45,18 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <a
+          <Button asChild variant="gold" size="default">
+  <a
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 hidden md:inline-flex"
           >
-            <Button variant="gold" size="default">
               <MessageCircle className="h-4 w-4" />
               WhatsApp Consultation
-            </Button>
-          </a>
-          <button
+            </a>
+</Button>
+          <button type="button"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}

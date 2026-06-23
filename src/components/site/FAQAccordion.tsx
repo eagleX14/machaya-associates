@@ -13,7 +13,7 @@ export function FAQAccordion({
         const isOpen = open === i;
         return (
           <div key={i}>
-            <button
+            <button type="button"
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}

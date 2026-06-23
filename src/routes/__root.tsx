@@ -3,18 +3,14 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsApp, MobileContactBar } from "@/components/site/FloatingActions";
-import { FIRM } from "@/lib/firm";
 
 function NotFoundComponent() {
   return (
@@ -39,9 +35,11 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
+
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-ivory px-4">
       <div className="max-w-md text-center">
@@ -50,7 +48,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           Something went wrong. Please try again or return home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
+          <button type="button"
+            type="button"
             onClick={() => {
               router.invalidate();
               reset();
@@ -59,127 +58,27 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a
-            href={import.meta.env.BASE_URL + "#/"}
+          <Link
+            to="/"
             className="rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium text-navy-deep hover:bg-muted"
           >
             Go home
-          </a>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  name: FIRM.name,
-  url: FIRM.url,
-  email: FIRM.emails.primary,
-  telephone: "+263 242 710173",
-  areaServed: "Zimbabwe",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: FIRM.address.line1,
-    addressLocality: "Harare",
-    addressRegion: "Harare",
-    addressCountry: "ZW",
-  },
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: "+263 772 990 567",
-      contactType: "customer service",
-      areaServed: "ZW",
-      availableLanguage: ["English"],
-    },
-  ],
-  serviceType: [
-    "Civil Law",
-    "Criminal Law",
-    "Corporate Law",
-    "Commercial Law",
-    "Conveyancing",
-    "Notarial Practice",
-    "Family Law",
-    "Debt Recovery",
-    "Employment Law",
-    "Intellectual Property Law",
-    "Litigation",
-    "Dispute Resolution",
-    "Tax Law",
-    "Estate Administration",
-  ],
-};
-
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#0f1b3d" },
-      { title: `${FIRM.name} | Law Firm in Harare, Zimbabwe` },
-      {
-        name: "description",
-        content:
-          "Machaya & Associates Legal Practitioners is a Harare-based law firm offering litigation, estates, corporate law, conveyancing, family law, employment law, intellectual property, tax law, and dispute resolution services.",
-      },
-      { name: "author", content: FIRM.name },
-      { property: "og:site_name", content: FIRM.short },
-      { property: "og:type", content: "website" },
-      { property: "og:title", content: `${FIRM.name} | Law Firm in Harare, Zimbabwe` },
-      {
-        property: "og:description",
-        content:
-          "Harare-based law firm offering litigation, estates, corporate, conveyancing, family, employment, IP, tax and dispute resolution services.",
-      },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${FIRM.name} | Law Firm in Harare, Zimbabwe` },
-      {
-        name: "twitter:description",
-        content:
-          "Harare-based law firm offering litigation, estates, corporate, conveyancing, family, employment, IP, tax and dispute resolution services.",
-      },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(orgJsonLd),
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background">

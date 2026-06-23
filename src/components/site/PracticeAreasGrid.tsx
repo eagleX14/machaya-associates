@@ -96,11 +96,11 @@ export function PracticeAreasGrid({ heading = true }: { heading?: boolean }) {
 
         {heading && (
           <div className="mt-12 flex justify-center">
-            <Link to="/practice-areas">
-              <Button variant="outlineGold" size="lg">
+            <Button asChild variant="outlineGold" size="lg">
+  <Link to="/practice-areas">
                 Explore all practice areas
-              </Button>
-            </Link>
+              </Link>
+</Button>
           </div>
         )}
       </div>
