@@ -11,7 +11,7 @@ export const Route = createFileRoute("/team")({
       {
         name: "description",
         content:
-          "Meet the legal practitioners at Machaya & Associates — Dambudzo Machaya, Kenias Chimiti, Moffat Makuvatsine, and Bridget T. Chapepa.",
+          "Meet the team at Machaya & Associates — legal practitioners, graduate trainees, company secretary, and company clerk serving clients from Harare.",
       },
       { property: "og:title", content: `Our Team | ${FIRM.short}` },
       {
@@ -37,8 +37,7 @@ function TeamPage() {
           </h1>
           <span className="gold-divider mt-6" />
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
-            A collaborative team of legal practitioners committed to clear advice,
-            careful preparation, and dedicated representation for every client.
+            A collaborative team of legal practitioners, graduate trainees, and support staff committed to clear advice, careful preparation, and dedicated service for every client.
           </p>
         </div>
       </section>

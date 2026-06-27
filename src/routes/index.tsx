@@ -5,6 +5,7 @@ import { WhyChooseUs } from "@/components/site/WhyChooseUs";
 import { TeamGrid } from "@/components/site/TeamGrid";
 import { CTASection } from "@/components/site/CTASection";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
+import { ArticlesPreview } from "@/components/site/ArticlesPreview";
 import { Button } from "@/components/ui/button";
 import { FIRM, mailto, waLink } from "@/lib/firm";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
@@ -179,6 +180,7 @@ function Home() {
       <PracticeAreasGrid />
       <WhyChooseUs />
       <TeamGrid />
+      <ArticlesPreview />
 
       <CTASection
         title="Schedule a confidential consultation"
