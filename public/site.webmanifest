@@ -1,0 +1,17 @@
+{
+  "name": "Machaya & Associates Legal Practitioners",
+  "short_name": "Machaya Law",
+  "description": "Trusted legal counsel in Harare, Zimbabwe.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071126",
+  "theme_color": "#12244d",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
