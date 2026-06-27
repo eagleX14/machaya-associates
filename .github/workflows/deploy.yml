@@ -35,10 +35,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Add GitHub Pages SPA fallback
+      - name: Add GitHub Pages fallback and custom domain
         run: |
           cp dist/index.html dist/404.html
           touch dist/.nojekyll
+          if [ -f public/CNAME ]; then cp public/CNAME dist/CNAME; fi
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
